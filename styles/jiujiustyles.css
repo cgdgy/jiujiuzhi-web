@@ -1,0 +1,176 @@
+html{
+    font-size:20px;
+}
+body{
+    background-color:#F7F7F7;
+}
+.container{
+    position:relative;
+    margin-right:1rem;
+    margin-left:1rem;
+}
+@media(min-width:768px){
+    .container{
+        margin-right:auto;
+        margin-left:auto;}
+}
+/*logo附加样式*/
+.jiujiuLogo{
+    margin-top:1rem;
+    height:2rem
+}
+@media(min-width:768px){
+    .jiujiuLogo{ height:3rem;}
+}
+.jiujiuLogo>img{
+    height:100%;
+    display:block;
+    margin-left:0;
+}
+@media(min-width:768px){
+    .jiujiuLogo>img{
+        margin-left:auto;
+        margin-right:0;}
+}
+@media(min-width:992px){
+    .jiujiuLogo>img{margin:0 auto;}
+}
+/*slogan附加样式*/
+.jiujiuSlogan{
+    margin-top:0.5rem;
+    height:0.5rem;
+    display:none;
+}
+@media(min-width:992px){
+    .jiujiuSlogan{ 
+        margin-top:1rem; 
+        height:1rem;
+        display:block;}
+}
+.jiujiuSlogan>img{
+    height:100%;
+    display:block;
+    margin:0 auto;
+}
+/*导航栏附加样式*/
+.jiujiuNav{
+    position:absolute;
+    top:1rem;
+    left:15px;
+    right:15px;
+}
+.jiujiuNav>.navbar{
+    padding:0;
+}
+.nav>li>a{
+    padding:0px 15px;
+}
+.navbar-brand{
+    height:1rem;
+    padding-top:0;
+    padding-bottom:0;
+    padding-left:0;
+    padding-right:20px;
+    display:none;
+}
+@media(min-width:768px){
+    .navbar-brand{ display:block; }
+}
+.navbar-brand>img{
+    height:100%;
+}
+.navbar-default{
+    background:none;
+    border:none;
+}
+/*导航toggle附加样式*/
+.navbar-toggle{
+    margin:0;
+    border:none;
+    padding:0;
+    border-radius:0;
+}
+.navbar-toggle .icon-bar{
+    height:0.2rem;
+    border-radius:0;
+}
+.navbar-toggle .icon-bar + .icon-bar{
+    margin-top:0.2rem;
+}
+.navbar-default .navbar-toggle .icon-bar{
+    background-color:#000;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus{
+    background-color:transparent;
+}
+/*导航栏toggle点击打开后的附加样式*/
+.navbar-collapse{
+    border-top:none;/*去掉默认1px的上border*/
+    margin-top:1.5rem;
+    margin-left:-0.25rem;
+    margin-right:-0.25rem;
+    padding:0;
+}
+.navbar-nav{
+    margin:0;
+}
+.navbar-nav>li{
+    float:left;/*小屏幕时菜单项也保持左浮动*/
+    height:2rem;
+}
+.navbar-collapse>.navbar-nav>li{
+    width:33.33%;/*小屏幕时每个菜单项的宽度为三分之一父元素宽度*/
+    padding:0px 0.25rem;
+}
+.navbar-collapse>.navbar-nav>li>a{
+    position:relative;
+    z-index:1000;
+    text-align:center;/*小屏幕时每个菜单项的文本居中*/
+    line-height:1.5rem;
+    height:1.5rem;
+    background-color:#FFF;
+    border-radius:4px;
+    outline:#EEEFEF solid 1px;
+    box-shadow:0 4px 6px rgba(0,0,0,.1);
+}
+@media(min-width:768px){
+    .navbar-collapse.collapse{
+        margin:0;
+    }
+    .navbar-collapse>.navbar-nav>li{
+        width:3rem;
+        padding:0px;
+    }
+    .navbar-collapse>.navbar-nav>li>a{
+    text-align:left;/*小屏幕时每个菜单项的文本左对齐*/
+    line-height:1rem;
+    background-color:transparent;
+    outline:none;
+    border-radius:0;
+    width:100%;
+    height:1rem;
+    -webkit-box-shadow:none;
+    box-shadow:none;
+    }
+}
+
+/*主页大图附加样式*/
+.jiujiuItem.slideDown{
+    margin-top:1rem;
+}
+.jiujiuItem>div{
+    background:#FFFFFF;
+    height:8rem;
+    border:1px solid #EEEFEF; 
+    border-radius:4px;
+    margin-top:1.5rem;
+    -webkit-box-shadow:0 6px 12px rgba(0,0,0,.175);
+    box-shadow:0 4px 6px rgba(0,0,0,.1);
+}
+@media(min-width:768px){
+    .jiujiuItem>div{height:18rem;margin-top:2rem;border-radius:8px;}
+}
+@media(min-width:992px){
+    .jiujiuItem>div{height:26rem;}
+}
