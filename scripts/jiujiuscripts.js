@@ -12,3 +12,28 @@
     doc.addEventListener('DOMContentLoaded',recalc,false);
 }
 )(document,window);
+/*toggle点开后后续元素下滑效果*/
+var slideSwitcher=false;/*下滑切换标记*/
+$(function(){
+    $(".navbar-toggle").click(function(){
+        if(slideSwitcher==false){
+            collapseUpDown($(".jiujiuItem"),true,$(".collapse"));
+            slideSwitcher=true;
+        }
+        else{
+            collapseUpDown($(".jiujiuItem"),false,$(".collapse"));
+            slideSwitcher=false;
+        }
+    })
+});
+function collapseUpDown(Item,updown,heightEle){
+    var slideHeight=$(heightEle).height();
+    if(updown==true){
+        $(Item).stop().animate({marginTop:"+="+slideHeight},200);
+    }
+    else{
+        $(Item).stop().animate({marginTop:"+="+(-slideHeight)},200);
+    }
+}
+
+

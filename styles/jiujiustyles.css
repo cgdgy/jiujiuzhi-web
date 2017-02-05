@@ -107,9 +107,7 @@ body{
 /*导航栏toggle点击打开后的附加样式*/
 .navbar-collapse{
     border-top:none;/*去掉默认1px的上border*/
-    margin-top:1.5rem;
-    margin-left:-0.25rem;
-    margin-right:-0.25rem;
+    margin-top:2rem;
     padding:0;
 }
 .navbar-nav{
@@ -117,22 +115,35 @@ body{
 }
 .navbar-nav>li{
     float:left;/*小屏幕时菜单项也保持左浮动*/
-    height:2rem;
 }
 .navbar-collapse>.navbar-nav>li{
     width:33.33%;/*小屏幕时每个菜单项的宽度为三分之一父元素宽度*/
-    padding:0px 0.25rem;
 }
 .navbar-collapse>.navbar-nav>li>a{
     position:relative;
     z-index:1000;
     text-align:center;/*小屏幕时每个菜单项的文本居中*/
-    line-height:1.5rem;
+    line-height:1.4rem;
     height:1.5rem;
-    background-color:#FFF;
-    border-radius:4px;
-    outline:#EEEFEF solid 1px;
-    box-shadow:0 4px 6px rgba(0,0,0,.1);
+    width:100%;
+    border:0.05rem solid #000;
+    background-color:transparent;
+    color:#000;
+    transition:background-color 0.1s ease-in;
+}
+.navbar-collapse>.navbar-nav>li:first-of-type>a{
+    border-bottom-left-radius: 4px;
+    border-top-left-radius: 4px;
+    border-right:0;
+}
+.navbar-collapse>.navbar-nav>li:last-of-type>a{
+    border-bottom-right-radius: 4px;
+    border-top-right-radius: 4px;
+    border-left:0;
+}
+.navbar-collapse>.navbar-nav>li>a:hover,
+.navbar-collapse>.navbar-nav>li>a:focus{
+    background-color:#DCDCDD;
 }
 @media(min-width:768px){
     .navbar-collapse.collapse{
@@ -141,36 +152,85 @@ body{
     .navbar-collapse>.navbar-nav>li{
         width:3rem;
         padding:0px;
+        border:none;
     }
     .navbar-collapse>.navbar-nav>li>a{
     text-align:left;/*小屏幕时每个菜单项的文本左对齐*/
     line-height:1rem;
     background-color:transparent;
-    outline:none;
+    border:none;
     border-radius:0;
     width:100%;
     height:1rem;
-    -webkit-box-shadow:none;
     box-shadow:none;
+    color:#AAAAAA;
+    }
+    .navbar-collapse>.navbar-nav>li>a:hover,
+    .navbar-collapse>.navbar-nav>li>a:focus{
+        background-color:transparent;
+        border-color:none;
+        color:#000;
+        box-shadow:none;
+        line-height:1rem;
+    }
+    .navbar-collapse>.navbar-nav>li:hover,
+    .navbar-collapse>.navbar-nav>li:focus{
+        border:0;
     }
 }
+/*导航栏二级菜单附加样式*/
+.navbar-nav .open .dropdown-menu{
+    margin-top:1rem;
+    background-color:transparent;
+    border:0.05rem solid #000;
+    border-radius:4px;
+    min-width:190px;  
+}
+.navbar-default .navbar-nav .open .dropdown-menu>li>a{
+    color:#000;
+}
+.nav .open>a, .nav .open>a:hover, .nav .open>a:focus{
+    border-color:#000;
+}
+@media(min-width:768px){
+    .navbar-nav .open .dropdown-menu{
+        background-color:#FFF;
+        border:1px solid #CCC;
+    }
+    .navbar-default .navbar-nav .open .dropdown-menu>li>a{
+        color:#555;
+    }
+    .navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:hover, .navbar-default .navbar-nav>.open>a:focus {
+        color: #555;
+        background-color:transparent;
+    }
+    .navbar-nav .open .dropdown-menu{
+        margin-top:0.5rem;
+    }
+}
+/*主页大图容器*/
 
 /*主页大图附加样式*/
-.jiujiuItem.slideDown{
-    margin-top:1rem;
-}
 .jiujiuItem>div{
     background:#FFFFFF;
     height:8rem;
     border:1px solid #EEEFEF; 
     border-radius:4px;
-    margin-top:1.5rem;
     -webkit-box-shadow:0 6px 12px rgba(0,0,0,.175);
-    box-shadow:0 4px 6px rgba(0,0,0,.1);
+    box-shadow:0 2px 4px rgba(0,0,0,.1);
 }
 @media(min-width:768px){
-    .jiujiuItem>div{height:18rem;margin-top:2rem;border-radius:8px;}
+    .jiujiuItem{
+        margin-top:2rem;
+    }
+    .jiujiuItem>div{
+        height:18rem;
+        border-radius:8px;
+        box-shadow:0 4px 6px rgba(0,0,0,.1);
+    }
 }
 @media(min-width:992px){
-    .jiujiuItem>div{height:26rem;}
+    .jiujiuItem>div{
+        height:26rem;
+    }
 }
