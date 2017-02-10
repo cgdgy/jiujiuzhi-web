@@ -1,7 +1,24 @@
+@font-face{
+    font-family:"NotoSansHans-Light";
+    src:url("../fonts/NotoSansHans/NotoSansHans-Light.otf");
+}
+@font-face{
+    font-family:"NotoSansHans-Regular";
+    src:url("../fonts/NotoSansHans/NotoSansHans-Regular.otf");
+}
+@font-face{
+    font-family:"NotoSansHans-Bold";
+    src:url("../fonts/NotoSansHans/NotoSansHans-Bold.otf");
+}
+@font-face{
+    font-family:"NotoSansHans-Black";
+    src:url("../fonts/NotoSansHans/NotoSansHans-Black.otf");
+}
 html{
     font-size:20px;
 }
 body{
+    font-family:"NotoSansHans-Regular";
     background-color:#F7F7F7;
 }
 .container{
@@ -16,11 +33,22 @@ body{
 }
 /*logo附加样式*/
 .jiujiuLogo{
-    margin-top:1rem;
-    height:2rem
+    position:absolute;
+    top:1rem;
+    height:2rem;
 }
 @media(min-width:768px){
-    .jiujiuLogo{ height:3rem;}
+    .jiujiuLogo{ 
+        height:3rem;
+        right:0;
+        margin-left:auto;
+        margin-right:auto;
+    }
+}
+@media(min-width:992px){
+    .jiujiuLogo{ 
+        left:0;
+    }
 }
 .jiujiuLogo>img{
     height:100%;
@@ -30,13 +58,16 @@ body{
 @media(min-width:768px){
     .jiujiuLogo>img{
         margin-left:auto;
-        margin-right:0;}
+        margin-right:auto;
+        }
 }
 @media(min-width:992px){
     .jiujiuLogo>img{margin:0 auto;}
 }
 /*slogan附加样式*/
 .jiujiuSlogan{
+    position:absolute;
+    top:4rem;
     margin-top:0.5rem;
     height:0.5rem;
     display:none;
@@ -45,7 +76,12 @@ body{
     .jiujiuSlogan{ 
         margin-top:1rem; 
         height:1rem;
-        display:block;}
+        display:block;
+        left:0;
+        right:0;
+        margin-left:auto;
+        margin-right:auto;
+    }
 }
 .jiujiuSlogan>img{
     height:100%;
@@ -54,13 +90,14 @@ body{
 }
 /*导航栏附加样式*/
 .jiujiuNav{
-    position:absolute;
     top:1rem;
     left:15px;
     right:15px;
+    margin-top:1rem;
 }
 .jiujiuNav>.navbar{
     padding:0;
+    margin-bottom:0;
 }
 .nav>li>a{
     padding:0px 15px;
@@ -186,6 +223,9 @@ body{
     border-radius:4px;
     min-width:190px;  
 }
+.navbar-nav .open .dropdown-menu>li:hover{
+    background-color:#DCDCDD;
+}
 .navbar-default .navbar-nav .open .dropdown-menu>li>a{
     color:#000;
     padding:0px 1rem;
@@ -211,32 +251,177 @@ body{
         margin-top:0.5rem;
     }
 }
-/*主页大图容器*/
-
 /*主页大图附加样式*/
-.jiujiuItem>div{
+.itemContainer{
+    position:relative;    
     background:#FFFFFF;
     height:8rem;
     border:1px solid #EEEFEF; 
     border-radius:4px;
-    -webkit-box-shadow:0 6px 12px rgba(0,0,0,.175);
-    box-shadow:0 2px 4px rgba(0,0,0,.1);
+    overflow:hidden;
+    padding:0;
+    -webkit-border-radius: 4px;
+    -webkit-transform: translateZ(0);
+    -webkit-mask-image: -webkit-radial-gradient(circle, white, black);/*用于处理增加transform属性后圆角处overflow hidden失效*/
 }
 .jiujiuItem{
     margin-top:1rem;
 }
+.shadowLayer{
+    overflow:hidden;
+    border-radius:4px;
+    -webkit-box-shadow:0 2px 4px rgba(0,0,0,.1);
+    box-shadow:0 2px 4px rgba(0,0,0,.1);
+}
+.itemContainer>.itemImg{
+    position:absolute;
+    height:90%;
+    right:0;
+    left:auto;
+    top:2.6rem;
+    bottom:auto;
+    transform:rotate(45deg);
+    animation:jiujiuRotate 50s linear infinite;
+}
+@keyframes jiujiuRotate{
+    0%{transform:rotate(45deg);}
+    100%{transform:rotate(405deg);}
+}
+.itemContainer>.toolsIcon{
+    position:absolute;
+    height:1rem;
+    width:3.5rem;
+    left:0.7rem;
+    top:5rem;
+}
+.itemContainer>.toolsIcon>img{
+    height:100%;
+    float:left;
+}
+.itemContainer>.itemText{
+    position:absolute;
+    top:1rem;
+    left:0.7rem;
+} 
+.itemContainer>.itemText>p{
+    font-family:"NotoSansHans-Bold";
+    font-size:0.7rem;
+    margin-bottom:4.3rem;
+} 
+.itemContainer>.itemText>ul{
+    padding:0;
+    font-family:"NotoSansHans-Light";
+    font-size:0.6rem;
+} 
+.itemContainer>.itemText>ul>li{
+    list-style:none;
+}
+.itemContainer>.itemText>ul>li:not(:last-child){
+    display:none;
+} 
 @media(min-width:768px){
     .jiujiuItem{
         margin-top:2rem;
     }
-    .jiujiuItem>div{
+    .shadowLayer{
+        border-radius:8px;
+        -webkit-box-shadow:0 4px 12px rgba(0,0,0,.175);
+        box-shadow:0 4px 12px rgba(0,0,0,.175);
+    }
+    .itemContainer{
         height:18rem;
         border-radius:8px;
-        box-shadow:0 4px 6px rgba(0,0,0,.1);
+        -webkit-border-radius:8px;
     }
+    .itemContainer>.toolsIcon{
+        height:2.5rem;
+        width:8rem;
+        top:1rem;
+        left:auto;
+        right:1.25rem;
+        bottom:auto;
+    }
+    .itemContainer>.itemImg{
+        height:120%;
+        left:-20%;
+        top:-32%;
+    }
+    .itemContainer>.itemText{
+        padding-right:1.25rem;
+        height:5rem;
+        top:auto;
+        left:auto;
+        bottom:2rem;
+        right:0;
+    }
+    .itemContainer>.itemText>p{
+        font-size:1.4rem;
+        margin-bottom:0.5rem;
+    }
+    .itemContainer>.itemText>ul{
+        font-size:0.6rem;
+        line-height:1rem;
+    }
+    .itemContainer>.itemText>ul>li:not(:last-child){
+        display:block;
+    }
+        .itemContainer>.itemText>ul>li:last-child{
+        display:none;
+    }   
 }
 @media(min-width:992px){
-    .jiujiuItem>div{
+    .jiujiuItem{
+        margin-top:4rem;
+    }
+    .itemContainer{
+        height:24rem;
+    }
+    .itemContainer>.itemImg{
+        height:120%;
+        left:-25%;
+        top:-32%;
+    }
+    .itemContainer>.itemText{
+        padding-right:2rem;
+        height:6rem;
+        bottom:2rem;
+        right:0;
+    }
+    .itemContainer>.toolsIcon{
+        height:3rem;
+        width:10rem;
+        top:2rem;
+        right:2rem;
+    }
+    .itemContainer>.itemText>p{
+        font-size:2.1rem;
+    }
+    .itemContainer>.itemText>ul{
+        font-size:0.7rem;
+        line-height:1rem;
+    } 
+}
+@media(min-width:1200px){
+    .itemContainer{
         height:26rem;
     }
+    .itemContainer>.itemImg{
+        height:120%;
+        left:-20%;
+        top:-32%;
+    }
+    .itemContainer>.itemText{
+        padding-right:2rem;
+        height:8rem;
+        bottom:2rem;
+        right:0;
+    }
+    .itemContainer>.itemText>p{
+        font-size:2.5rem;
+
+    }
+    .itemContainer>.itemText>ul{
+        font-size:0.8rem;
+        line-height:1.2rem;
+    } 
 }
