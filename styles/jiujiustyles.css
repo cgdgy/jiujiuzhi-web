@@ -144,11 +144,13 @@ body{
 /*导航栏toggle点击打开后的附加样式*/
 .navbar-collapse{
     border-top:none;/*去掉默认1px的上border*/
-    margin-top:2rem;
     padding:0;
 }
 .navbar-nav{
-    margin:0;
+    margin-left:0;
+    margin-right:0;
+    margin-top:2rem;
+    margin-bottom:0;
 }
 .navbar-nav>li{
     float:left;/*小屏幕时菜单项也保持左浮动*/
@@ -183,6 +185,9 @@ body{
     background-color:#DCDCDD;
 }
 @media(min-width:768px){
+    .navbar-nav{
+        margin:0;
+    }
     .navbar-collapse.collapse{
         margin:0;
     }
@@ -215,13 +220,45 @@ body{
         border:0;
     }
 }
-/*导航栏二级菜单附加样式*/
+/*自定义导航栏二级菜单附加样式*/
+.jiujiuDropdown-menu{
+    position:absolute;
+    top:100%;
+    left:0;
+    z-index:1000;
+    display:none;
+    float:left;
+    min-width:10rem;
+    margin-top:1rem;
+    padding-top:0.5rem;
+    padding-bottom:0.5rem;
+    padding-right:0;
+    padding-left:1rem;
+    list-style:none;
+    background-color:#fff;
+    background-clip:padding-box;
+    border:1px solid #ccc;
+    border-radius:4px;
+    -webkit-box-shadow:0 6px 12px rgba(0,0,0,.175);
+}
+.jiujiuDropdown-menu>li>a{
+    height:1rem;
+    line-height:1rem;
+    color:#000;
+}
+@media(max-width:767px){
+    .jiujiuDropdown-menu{
+        position:static;
+        float:none;
+    }
+}
+/*bootstrap导航栏二级菜单附加样式*/
 .navbar-nav .open .dropdown-menu{
     margin-top:1rem;
     background-color:transparent;
     border:0.05rem solid #000;
     border-radius:4px;
-    min-width:190px;  
+    min-width:190px;
 }
 .navbar-nav .open .dropdown-menu>li:hover{
     background-color:#DCDCDD;
@@ -250,7 +287,9 @@ body{
     .navbar-nav .open .dropdown-menu{
         margin-top:0.5rem;
     }
+
 }
+
 /*主页大图附加样式*/
 .itemContainer{
     position:relative;    

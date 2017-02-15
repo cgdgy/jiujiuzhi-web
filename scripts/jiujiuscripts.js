@@ -12,4 +12,17 @@
     doc.addEventListener('DOMContentLoaded',recalc,false);
 }
 )(document,window);
-/*toggle点开后后续元素下滑效果*/
+/*dropdown下滑效果*/
+var dropdownMark = false;
+$(function(){
+    $(".jiujiuDropdown-toggle").click(function(){
+        if(dropdownMark==false){
+            $(this).next().stop().show(200);
+            dropdownMark = true;
+        }
+        else{
+            $(this).next().stop().hide(200);
+            dropdownMark = false;
+        }
+    })
+});
