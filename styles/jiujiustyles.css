@@ -297,7 +297,7 @@ body{
     -webkit-box-shadow:0 2px 4px rgba(0,0,0,.1);
     box-shadow:0 2px 4px rgba(0,0,0,.1);
 }
-.itemContainer>.itemImg{
+.itemContainer>.itemImg1{
     position:absolute;
     height:90%;
     right:0;
@@ -306,19 +306,37 @@ body{
     bottom:auto;
     transform:rotate(45deg);
     animation:jiujiuRotate 50s linear infinite;
+    -webkit-animation:jiujiuRotate 50s linear infinite;
 }
 @keyframes jiujiuRotate{
-    0%{transform:rotate(45deg);}
-    100%{transform:rotate(405deg);}
+    0%{
+        -webkit-transform: rotate(45deg);
+        transform:rotate(45deg);
+        }
+    100%{
+        -webkit-transform: rotate(405deg);
+        transform:rotate(405deg);
+        }
 }
-.itemContainer>.toolsIcon{
+.itemContainer>.toolsIcon1{
     position:absolute;
     height:1rem;
     width:3.5rem;
     left:0.7rem;
     top:5rem;
 }
-.itemContainer>.toolsIcon>img{
+.itemContainer>.toolsIcon2{
+    position:absolute;
+    height:1rem;
+    width:3.5rem;
+    left:0.7rem;
+    top:5rem;
+}
+.itemContainer>.toolsIcon1>img{
+    height:100%;
+    float:left;
+}
+.itemContainer>.toolsIcon2>img{
     height:100%;
     float:left;
 }
@@ -357,7 +375,15 @@ body{
         border-radius:8px;
         -webkit-border-radius:8px;
     }
-    .itemContainer>.toolsIcon{
+    .itemContainer>.toolsIcon1{
+        height:2.5rem;
+        width:8rem;
+        top:1rem;
+        left:1.25rem;
+        right:auto;
+        bottom:auto;
+    }
+    .itemContainer>.toolsIcon2{
         height:2.5rem;
         width:8rem;
         top:1rem;
@@ -365,12 +391,20 @@ body{
         right:1.25rem;
         bottom:auto;
     }
-    .itemContainer>.itemImg{
+    .itemContainer>.itemImg1{
         height:120%;
-        left:-20%;
+        right:-20%;
         top:-32%;
     }
-    .itemContainer>.itemText{
+    .itemContainer>.itemText1{
+        padding-left:1.25rem;
+        height:5rem;
+        top:auto;
+        left:0;
+        bottom:2rem;
+        right:auto;
+    }
+    .itemContainer>.itemText2{
         padding-right:1.25rem;
         height:5rem;
         top:auto;
@@ -389,9 +423,9 @@ body{
     .itemContainer>.itemText>ul>li:not(:last-child){
         display:block;
     }
-        .itemContainer>.itemText>ul>li:last-child{
+    .itemContainer>.itemText>ul>li:last-child{
         display:none;
-    }   
+    }  
 }
 @media(min-width:992px){
     .jiujiuItem{
@@ -400,23 +434,37 @@ body{
     .itemContainer{
         height:24rem;
     }
-    .itemContainer>.itemImg{
+    .itemContainer>.itemImg1{
         height:120%;
-        left:-25%;
-        top:-32%;
+        right:-25%;
+        top:-20%;
     }
-    .itemContainer>.itemText{
+    .itemContainer>.itemText1{
+        padding-left:2rem;
+        height:6rem;
+        bottom:2rem;
+        left:0;
+    }
+    .itemContainer>.itemText2{
         padding-right:2rem;
         height:6rem;
         bottom:2rem;
         right:0;
     }
-    .itemContainer>.toolsIcon{
+    .itemContainer>.toolsIcon2{
         height:3rem;
         width:10rem;
         top:2rem;
         right:2rem;
     }
+    .itemContainer>.toolsIcon1{
+        position:absolute;
+        height:3rem;
+        width:10rem;
+        left:2rem;
+        top:2rem;
+    }
+
     .itemContainer>.itemText>p{
         font-size:2.1rem;
     }
@@ -429,16 +477,22 @@ body{
     .itemContainer{
         height:26rem;
     }
-    .itemContainer>.itemImg{
+    .itemContainer>.itemImg1{
         height:120%;
-        left:-20%;
-        top:-32%;
+        right:-10%;
+        top:-30%;
     }
-    .itemContainer>.itemText{
+    .itemContainer>.itemText2{
         padding-right:2rem;
         height:8rem;
         bottom:2rem;
         right:0;
+    }
+    .itemContainer>.itemText1{
+        padding-left:2rem;
+        height:8rem;
+        bottom:2rem;
+        left:0;
     }
     .itemContainer>.itemText>p{
         font-size:2.5rem;
@@ -448,4 +502,74 @@ body{
         font-size:0.8rem;
         line-height:1.2rem;
     } 
+}
+
+
+/*广煜轮播图附加样式*/
+.itemImg2{
+    position:absolute;
+    height:55%;
+    right:-38%;
+    left:auto;
+    top:3rem;
+    bottom:auto;
+    transform:rotate(135deg);   
+}
+@media(min-width:768px){
+    .itemImg2{
+        height:60%;
+        right:auto;
+        left:-40%;
+        top:3rem;
+        transform:rotate(-45deg);    
+    }
+}
+@media(min-width:992px){
+    .itemImg2{
+        height:70%;
+        left:-35%; 
+    }
+}
+@media(min-width:1200px){
+    .itemImg2{
+        left:-30%;
+        top:1rem;
+    }
+}
+/*change bootstrap carousel animation*/
+.carousel-inner>.item{
+    -webkit-transition:20s linear left;
+    -o-transition:20s linear left;
+    transition:20s linear left;
+}
+@media all and (transform-3d),(-webkit-transform-3d){
+    .carousel-inner>.item{
+        -webkit-transition:-webkit-transform 20s linear;
+        -o-transition:-o-transform 20s linear;
+        transition:transform 20s linear;
+    }
+}
+
+/*底栏样式*/
+.jiujiuBottom{
+    margin-top:4rem;
+    height:9rem;
+}
+@media(min-width:768px){
+    .jiujiuBottom{
+        margin-top:5rem;
+        height:9rem;
+    }
+}
+@media(min-width:992px){
+    .jiujiuBottom{
+        margin-top:9rem;
+        height:19rem;
+    }
+}
+@media(min-width:1200px){
+    .jiujiuBottom{
+        margin-top:9rem;
+        height:19rem;
+    }
 }

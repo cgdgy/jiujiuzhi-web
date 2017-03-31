@@ -12,3 +12,9 @@
     doc.addEventListener('DOMContentLoaded',recalc,false);
 }
 )(document,window);
+
+(function(){
+    $('.carousel').carousel({
+        interval:10
+    });
+})

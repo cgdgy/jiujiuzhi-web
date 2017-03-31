@@ -32,7 +32,7 @@
 
   Carousel.VERSION  = '3.3.7'
 
-  Carousel.TRANSITION_DURATION = 600
+  Carousel.TRANSITION_DURATION = 20000
 
   Carousel.DEFAULTS = {
     interval: 5000,
