@@ -555,10 +555,61 @@ body{
     margin-top:4rem;
     height:9rem;
 }
+.jiujiuBottom>div{
+    padding:0;
+}
+.Inc{
+    font-family:"NotoSansHans-Bold";
+    font-size:0.6rem;
+    margin:0;
+    width:8rem;
+    float:left;
+}
+.platformIcon{
+    float:right;
+    height:1.5rem;
+}
+.platformIcon>img{
+    height:100%;
+    float:right;
+    margin-left:0.5rem;
+}
+.jiujiuBottom>div:nth-of-type(2){
+    display:none;
+    padding-left:1.5rem;
+    font-family:"NotoSansHans-Bold";
+    font-size:0.7rem;
+}
+.jiujiuBottom>div:nth-of-type(2)>p{
+    margin-bottom:2rem;
+}
+.contactWay{
+    font-family:"NotoSansHans-Light";
+}
+.contactWay>p{
+    margin-bottom:0;
+}
 @media(min-width:768px){
     .jiujiuBottom{
         margin-top:5rem;
         height:9rem;
+    }
+    .Inc{
+        font-size:0.7rem;
+        margin-bottom:2rem;
+        width:auto;
+    }
+    .platformIcon{
+        float:left;
+        height:2rem;
+    }
+    .platformIcon>img{
+        float:left;
+        margin-left:0;
+        margin-right:1.2rem;
+    }
+    .jiujiuBottom>div:nth-of-type(2){
+        display:block;
     }
 }
 @media(min-width:992px){

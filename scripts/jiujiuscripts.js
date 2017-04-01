@@ -15,6 +15,7 @@
 
 (function(){
     $('.carousel').carousel({
-        interval:10
+        interval: 10,
+        wrap: true,
     });
 })
